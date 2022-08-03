@@ -1,0 +1,5 @@
+#!/bin/bash
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 278328016972.dkr.ecr.us-east-2.amazonaws.com
+docker build -t zyte-smartproxy-headless-proxy-local .
+docker tag zyte-smartproxy-headless-proxy-local 278328016972.dkr.ecr.us-east-2.amazonaws.com/zyte-smartproxy-headless-proxy-local:latest
+docker push 278328016972.dkr.ecr.us-east-2.amazonaws.com/zyte-smartproxy-headless-proxy-local:latest
